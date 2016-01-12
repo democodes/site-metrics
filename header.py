@@ -56,7 +56,6 @@ for url in list:
 	c.setopt(c.WRITEDATA, buffer)
 	c.perform()
 
-	print('Status: %d' % c.getinfo(c.RESPONSE_CODE))
 	responsecode = c.getinfo(c.RESPONSE_CODE)
 	c.close()
 	siteproperties.append(responsecode)

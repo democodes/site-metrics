@@ -1,1 +1,1 @@
-{"http://facebook.com": ["Webserver details is not published", "Response code:200"], "http://gmail.com": ["webserver:sffe", "Response code:200"], "http://youtube.com": ["webserver:gwiseguy/2.0", "Response code:200"], "http://google.com": ["webserver:gws", "Response code:200"]}
+{"http://google.com": ["gws", 301], "http://youtube.com": ["gwiseguy", 301], "http://gmail.com": ["sffe", 301], "http://facebook.com": ["Webserver details is not published", 302]}

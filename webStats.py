@@ -1,13 +1,21 @@
 #!/usr/bin/env python
 
-import dns.name
-import dns.resolver
 
-n = dns.name.from_text('www.dnspython.org')
-o = dns.name.from_text('dnspython.org')
-print(n.is_subdomain(o))        # True
+import pexpect
 
+def getwhoisinfo(site='shafiulla.info'):
+    child = pexpect.spawn('whois '+site)
+    child.expect(pexpect.EOF)
+    print(child.before)
 
-answers = dns.resolver.query('nominum.com', 'MX')
-for rdata in answers:
-    print('Host', rdata.exchange, 'has preference', rdata.preference)
+def dnsinfo(site='shafiulla.info'):
+    '''
+       host -t cname files.cyberciti.biz
+       host -t mx cyberciti.biz
+       host -t mx shafiulla.info
+       host -t a shafiulla.info
+       host -t cname shafiulla.info
+    :return:
+    '''
+
+getwhoisinfo()

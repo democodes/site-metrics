@@ -17,5 +17,13 @@ def dnsinfo(site='shafiulla.info'):
        host -t cname shafiulla.info
     :return:
     '''
+    for item in ['cname', 'mx', 'a', 'txt']:
+        s = 'host -t '
+        s += item
+        s += ' '
+        s += site
+        child = pexpect.spawn(s)
+        child.expect(pexpect.EOF)
+        print(child.before)
 
-getwhoisinfo()
+dnsinfo()
